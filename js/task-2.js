@@ -26,5 +26,5 @@ storage.addItem("Droid");
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
 storage.removeItem("Prolonger");
 console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
-storage.removeItem("SomeProduct");
-console.log(storage.getItems()); // "SomeProduct not found!"
+storage.removeItem("SomeProduct"); // "SomeProduct not found!"
+console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
