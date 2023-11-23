@@ -15,15 +15,16 @@ class Storage {
 
     removeItem(itemToRemove) {
         const indexOfRemovingItem = this.#items.indexOf(itemToRemove);
-        this.#items.splice(indexOfRemovingItem, 1);
-    }
+        indexOfRemovingItem >= 0 ? this.#items.splice(indexOfRemovingItem, 1) : console.log(`${itemToRemove} not found!`);
+        }
 }
 
-//питання: як тільки відкриваю консоль, то результат невірний, але після того як оновлюю сторінку вже видає
-//вірні масиви. В чому проблема? як її позбавитися? чи так і має бути?
+
 const storage = new Storage(["Nanitoids", "Prolonger", "Antigravitator"]);
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator"]
 storage.addItem("Droid");
 console.log(storage.getItems()); // ["Nanitoids", "Prolonger", "Antigravitator", "Droid"]
 storage.removeItem("Prolonger");
 console.log(storage.getItems()); // ["Nanitoids", "Antigravitator", "Droid"]
+storage.removeItem("SomeProduct");
+console.log(storage.getItems()); // "SomeProduct not found!"
